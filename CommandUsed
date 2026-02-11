@@ -1,0 +1,6 @@
+TO generate js and wasm files:
+docker run --rm -v $(pwd):/src emscripten/emsdk emcc /src/main.cpp -o /src/greeting.js -s EXPORTED_FUNCTIO
+NS='["_greet"]' -s EXPORTED_RUNTIME_METHODS='["ccall","cwrap"]'
+
+TO Run Project:
+python -m http.server 8000
